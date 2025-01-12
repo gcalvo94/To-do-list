@@ -1,0 +1,21 @@
+<div class="task-dialog">
+    <h2 class="dialog-title">Add New Task</h2>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Título</mat-label>
+            <input matInput formControlName="title" placeholder="Introducir título" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput formControlName="description" placeholder="Introducir descripción" rows="2"></textarea>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="isDone">Completo</mat-checkbox>
+        
+        <div class="actions">
+            <button mat-button color="warn" type="button" (click)="onCancel()">CANCELAR</button>
+            <button mat-raised-button color="primary" type="submit">AÑADIR</button>
+        </div>
+    </form>
+</div>

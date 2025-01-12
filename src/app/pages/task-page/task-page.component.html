@@ -1,0 +1,28 @@
+<div class="header">
+  <h1>Task Page</h1>
+  <button mat-raised-button color="primary" (click)="openAddTaskDialog()">
+    Add Task
+  </button>
+</div>
+ 
+<div class="task-container">
+  <!-- Columna de Pending -->
+  <div class="task-column">
+    <h2>Pending Tasks</h2>
+    <app-task-card
+      *ngFor="let task of tasks"
+      [task]="task"
+      (click)="openEditTaskDialog(task)"
+    ></app-task-card>
+  </div>
+ 
+  <!-- Columna de Completed -->
+  <div class="task-column">
+    <h2>Completed Tasks</h2>
+    <app-task-card
+      *ngFor="let task of tasks"
+      [task]="task"
+      (click)="openEditTaskDialog(task)"
+    ></app-task-card>
+  </div>
+</div>

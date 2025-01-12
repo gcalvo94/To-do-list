@@ -1,0 +1,72 @@
+.task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; // Ocupará el 100% del contenedor
+  max-width: 300px; // Ancho máximo para todas las tarjetas
+  min-height: 200px; // Altura mínima
+  padding: 16px;
+  margin: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: #fff;
+  word-wrap: break-word; // Ajusta el texto largo
+  overflow: hidden; // Evita desbordamientos
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+.user-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+
+.task-id {
+  font-size: 12px;
+  color: gray;
+  margin: 4px 0;
+}
+
+.task-text {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #555;
+}
+.task-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4; // Espaciado entre líneas
+  white-space: normal; // El texto puede hacer saltos de línea
+}
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.status-done {
+  color: #4caf50; // Verde
+  font-weight: bold;
+}
+
+.status-pending {
+  color: #f44336; // Rojo
+  font-weight: bold;
+}
