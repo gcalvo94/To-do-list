@@ -1,15 +1,15 @@
 <mat-card class="task-card">
   <!-- Imagen del usuario -->
-  <div class="user-image">
+  <!-- <div class="user-image">
     <img [src]="task.userImage" alt="User Image" />
-  </div>
+  </div> -->
 
   <!-- Contenido de la tarjeta -->
   <mat-card-title class="task-title">{{ task.title }}</mat-card-title>
 
   <!-- Descripción -->
   <mat-card-content class="task-description">
-    {{ task.task }}
+    {{ task.description }}
   </mat-card-content>
 
   <!-- Acciones -->
@@ -17,7 +17,7 @@
     <span [class]="task.isDone ? 'status-done' : 'status-pending'">
       {{ task.isDone ? 'Completed' : 'Pending' }}
     </span>
-    <button mat-button color="primary">Edit</button>
-    <button mat-button color="warn">Delete</button>
+    <button mat-button color="primary" (click)="onEdit()">Edit</button>
+    <button mat-button color="warn" (click)="onDelete()">Delete</button>
   </mat-card-actions>
 </mat-card>

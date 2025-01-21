@@ -1,7 +1,7 @@
 export interface Task {
     id: number;
     title: string;
-    task: string;
+    description: string;
     isDone: boolean;
-    userImage: string;
+    
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Task } from '../../models/Task';
 import { CommonModule } from '@angular/common';
@@ -14,5 +14,16 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class TaskCardComponent {
   @Input() task!: Task;
-
+  @Output() edit = new EventEmitter<Task>();
+  @Output() delete = new EventEmitter<number>();
+ 
+  // Métodos para emitir los eventos
+  onEdit(): void {
+    console.log('task', this.task);
+    this.edit.emit(this.task);
+  }
+ 
+  onDelete(): void {
+    this.delete.emit(this.task.id);
+  }
 }
