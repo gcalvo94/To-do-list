@@ -1,31 +1,30 @@
 <div class="header">
-  <h1>Task Page</h1>
+  <h1>Página de Tareas</h1>
   <button mat-raised-button color="primary" (click)="addTask()">
-    Add Task
+    Añadir Tarea
   </button>
 </div>
  
 <div class="task-container">
-  <!-- Columna de Pending -->
+  
   <div class="task-column">
-    <h2>Pending Tasks</h2>
+    <h2>Tareas Pendientes</h2>
     <app-task-card
       *ngFor="let task of pendingTasks"
       [task]="task"
       (edit)="editTask(task)"
-      (delete)="deleteTask(task.id)"
+      (delete)="deleteTask(task.taskId)"
  
     ></app-task-card>
-  </div>
- 
-  <!-- Columna de Completed -->
+  </div> 
+  
   <div class="task-column">
-    <h2>Completed Tasks</h2>
+    <h2>Tareas Completadas</h2>
     <app-task-card
       *ngFor="let task of completedTasks"
       [task]="task"
       (edit)="editTask(task)"
-      (delete)="deleteTask(task.id)"
+      (delete)="deleteTask(task.taskId)"
  
     ></app-task-card>
   </div>

@@ -15,15 +15,14 @@ import { MatIconModule } from '@angular/material/icon';
 export class TaskCardComponent {
   @Input() task!: Task;
   @Output() edit = new EventEmitter<Task>();
-  @Output() delete = new EventEmitter<number>();
- 
-  // Métodos para emitir los eventos
+  @Output() delete = new EventEmitter<number>(); 
+  
   onEdit(): void {
     console.log('task', this.task);
     this.edit.emit(this.task);
   }
  
   onDelete(): void {
-    this.delete.emit(this.task.id);
+    this.delete.emit(this.task.taskId);
   }
 }

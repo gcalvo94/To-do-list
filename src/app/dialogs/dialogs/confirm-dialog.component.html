@@ -1,0 +1,13 @@
+<div class="confirm-dialog">
+    
+    <h2 class="dialog-title">{{ data.title }}</h2>
+   
+    
+    <p class="dialog-description">{{ data.description }}</p>
+   
+    
+    <div class="dialog-actions">
+      <button mat-button color="warn" (click)="cancel()">CANCELAR</button>
+      <button mat-raised-button color="primary" (click)="confirm()">CONFIRMAR</button>
+    </div>
+  </div>

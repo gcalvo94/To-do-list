@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Task } from '../models/Task';
+import { Task, TaskRequest } from '../models/Task';
 
  
 @Injectable({
@@ -10,24 +10,23 @@ import { Task } from '../models/Task';
 export class TaskApiService {
   private baseUrl = 'https://localhost:44336/api/task';
  
-  constructor(private http: HttpClient) {}
- 
-  // Obtener todas las tareas (GET)
+  constructor(private http: HttpClient) {} 
+  
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.baseUrl);
   }
-  // Insertar nueva tarea
-  addTask(task: Task): Observable<any> {
-    return this.http.post<any>(this.baseUrl, task);
+    
+  addTask(task: TaskRequest): Observable<TaskRequest> {
+    return this.http.post<TaskRequest>(this.baseUrl, task);
+  } 
+  
+  updateTask(id: string, task: TaskRequest): Observable<TaskRequest> {
+    console.log('tarearequest', task);
+    return this.http.put<TaskRequest>(`${this.baseUrl}/${id}`, task);
   }
- 
-  // Actualizar una tarea (PUT)
-  updateTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.baseUrl}/${task.id}`, task);
-  }
-  // Eliminar tarea por ID
-  deleteTask(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/${id}`);
+  
+  deleteTask(id: number): Observable<TaskRequest> {
+    return this.http.delete<TaskRequest>(`${this.baseUrl}/${id}`);
   }
 }
  
